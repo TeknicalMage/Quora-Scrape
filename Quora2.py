@@ -6,6 +6,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
+landing = 'https://www.quora.com/What-s-something-that-you-noticed-when-you-quit-a-bad-habit/log'
+
 
 def LoadPage():
     chrome_options = Options()
@@ -13,7 +15,7 @@ def LoadPage():
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-dev-shm-usage")
     driver = webdriver.Chrome(chrome_options=chrome_options)
-    driver.get('https://www.quora.com/What-s-something-that-you-noticed-when-you-quit-a-bad-habit/log')
+    driver.get(landing)
 
 
     while 1:
@@ -39,38 +41,25 @@ def LoadPage():
             
 
         print('exit_key')
-        f_text = open('text.txt', 'w')
+        #f_text = open('text.txt', 'w')
         #f_author = open('Author.txt', 'w')
-
-        cnt = 0
+        time.sleep(10)
+        cnt = 1
         while cnt < 1000000:
-        
-
-            
     
-            try:    
-                cnt = 1
-                while cnt < 1000000:
-                    
-                    x = driver.find_elements_by_xpath('//*[@class="q-box qu-cursor--pointer qu-hover--textDecoration--underline"]')[cnt].click()
+            z = driver.find_elements_by_xpath('//*[@class="q-box qu-cursor--pointer qu-hover--textDecoration--underline"]')[cnt].get_attribute('href')
 
-                    time.sleep(5)
+            #time.sleep(5)
 
-                    driver.get(landing)
-                    
+            #driver.get(landing)
 
+            print(z)
+        
+            time.sleep(.5)
 
-                    #z = driver.find_elements_by_xpath('//*[@class="q-box qu-cursor--pointer qu-hover--textDecoration--underline"]')[cnt].get_attribute('href') 
-                    #time.sleep(50)
+            cnt+=2
 
-                    #print(z)
-
-                    time.sleep(.5)
-
-        cnt+=2
-
-            except:
-                print('hah error')
+        
                 
             
         
