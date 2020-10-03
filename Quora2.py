@@ -41,22 +41,23 @@ def LoadPage():
             
 
         print('exit_key')
-        #f_text = open('text.txt', 'w')
+        f = open('Names.txt', 'w')
+        
         #f_author = open('Author.txt', 'w')
-        time.sleep(10)
+        time.sleep(1)
         cnt = 1
         while cnt < 1000000:
     
             z = driver.find_elements_by_xpath('//*[@class="q-box qu-cursor--pointer qu-hover--textDecoration--underline"]')[cnt].get_attribute('href')
+            
 
             #time.sleep(5)
 
             #driver.get(landing)
 
             print(z)
+            f.write(z)
         
-            time.sleep(.5)
-
             cnt+=2
 
         

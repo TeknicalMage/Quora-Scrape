@@ -67,7 +67,7 @@ def LoadPage():
 
                     time.sleep(.5)
 
-        cnt+=2
+                    cnt+=2
 
             except:
                 print('hah error')
