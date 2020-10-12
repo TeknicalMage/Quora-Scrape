@@ -163,8 +163,8 @@ def show_ip_port(data):
 def zoomeye_api_test():
     zoomeye = ZoomEye()
     #zoomeye.username = raw_input('ZoomEye Username: ')
-    zoomeye.username = 'teknicalmagetwitch@gmail.com'
-    zoomeye.password = 'Arkamides1678!'
+    zoomeye.username = '@gmail.com'
+    zoomeye.password = '!'
     #zoomeye.password = getpass.getpass(prompt='ZoomEye Password: ')
     zoomeye.login()
     print(zoomeye.resources_info())
